@@ -4,7 +4,8 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Welcome to Astro.">
   <main>
-    <header class="py-6 px-10 flex items-center fixed top-0 w-full justify-between">
+    <header 
+    class="py-6 px-10 flex items-center fixed top-0 w-full justify-between">
       <div>
         <svg
           class="h-6 w-32"
@@ -17,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
 
       <nav>
-        <ul>
+        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
           <li><a href="#">Model S</a></li>
           <li><a href="#">Model 3</a></li>
           <li><a href="#">Model X</a></li>
@@ -28,7 +29,7 @@ import Layout from "../layouts/Layout.astro";
       </nav>
 
       <nav>
-        <ul>
+        <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
           <li><a href="#">Soporte</a></li>
           <li><a href="#">Tienda</a></li>
           <li><a href="#">Cuenta</a></li>
