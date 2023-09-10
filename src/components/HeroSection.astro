@@ -1,0 +1,80 @@
+<section
+  class="landing-section h-screen w-screen text-center overflow-hidden relative bg-black"
+  data-header-color="white"
+>
+  <div class="z-30 relative h-full flex flex-col">
+    <header>
+      <h2 class="text-white pt-40 text-5xl font-medium">Model 3</h2>
+
+      <strong class="text-white text-2xl">From $29,740*</strong>
+
+      <p class="text-sm text-white">
+        After Federal Tax Credit & Est. Gas Savings
+      </p>
+    </header>
+
+    <footer
+      class="flex justify-center flex-grow pb-24"
+    >
+      <div id="landing-a" class="flex justify-center gap-x-4 mt-[auto] backdrop-blur-lg border">
+        <a
+          class="w-[17rem] rounded font-medium px-6 py-2 inline-block
+          text-stone-300 hover:text-black transition-colors"
+          href="#">
+          Order Now
+        </a>
+        <a
+          class="text-stone-300 hover:text-black w-[17rem] rounded font-medium px-6 py-2 inline-block
+            transition-colors"
+          href="#">
+          Read More
+        </a>
+        
+      </div>
+    </footer>
+  </div>
+
+  <div class="absolute top-0 bottom-0 h-full w-full z-10">
+    <video
+      class="object-center object-cover h-full w-full"
+      autoplay
+      muted
+      loop
+      src="video2.mp4"></video>
+  </div>
+
+
+  <div 
+  id="icon-backdrop-hero"
+  class="absolute bg-stone-300 backdrop-blur-lg rounded
+  left-[var(--left)] top-[var(--top)]
+  w-[var(--width)] h-[var(--height)]
+  transition-all duration-300
+  ease-in-out opacity-0 z-10">
+  </div>
+
+</section>
+
+<script>
+  const listItemA = document.querySelectorAll("#landing-a a")  // le paso el id del contenedor padre seguido del boton
+  const iconBackdrop = document.querySelector("#icon-backdrop-hero") as HTMLElement // le paso el id de la caja que se mueve en el fondo
+
+  listItemA.forEach((item) => {  // a cada item de tipo a en #landing-a
+    item.addEventListener("mouseenter", () => { // le agrego un event listener de cuando entra el mouse
+      const {left, top, width, height} = item.getBoundingClientRect() 
+      
+      iconBackdrop.style.setProperty("--left", `${left}px`) // seteo la ubicacion de la caja a la misma ubicacion del boton
+      iconBackdrop.style.setProperty("--top", `${top}px`)
+      iconBackdrop.style.setProperty("--width", `${width}px`)
+      iconBackdrop.style.setProperty("--height", `${height}px`)
+
+      iconBackdrop.style.opacity = "1"  // y la hago visible
+      iconBackdrop.style.visibility = "visible"
+    })
+
+    item.addEventListener("mouseleave", () => {  // meto otro event listener para saber cuando se va el mouse
+      iconBackdrop.style.opacity = "0"
+      iconBackdrop.style.visibility = "hidden"
+    })
+  })
+</script>
