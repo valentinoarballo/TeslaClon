@@ -16,15 +16,15 @@
     <footer
       class="flex justify-center flex-grow pb-24"
     >
-      <div id="landing-a" class="flex justify-center gap-x-4 mt-[auto] backdrop-blur-lg border">
+      <div id="landing-a" class="flex justify-center gap-x-4 mt-[auto] backdrop-blur-lg ">
         <a
           class="w-[17rem] rounded font-medium px-6 py-2 inline-block
-          text-white transition-colors"
+          text-white hover:text-black transition-colors"
           href="#">
           Order Now
         </a>
         <a
-          class="text-white w-[17rem] rounded font-medium px-6 py-2 inline-block
+          class="text-white hover:text-black w-[17rem] rounded font-medium px-6 py-2 inline-block
             transition-colors"
           href="#">
           Read More
@@ -35,18 +35,17 @@
   </div>
 
   <div class="absolute top-0 bottom-0 h-full w-full z-10">
-    <video
+    <img
       class="object-center object-cover h-full w-full"
-      autoplay
-      muted
-      loop
-      src="video2.mp4"></video>
+      src="modelS.avif"
+      alt="Image of Model Y"
+    />
   </div>
 
 
   <div 
-  id="icon-backdrop-hero"
-  class="absolute bg-stone-700 backdrop-blur-lg rounded
+  id="icon-backdrop-modelS"
+  class="absolute bg-red-700 backdrop-blur-lg rounded
   left-[var(--left)] top-[var(--top)]
   w-[var(--width)] h-[var(--height)]
   transition-all duration-300
@@ -57,7 +56,7 @@
 
 <script>
   const listItemA = document.querySelectorAll("#landing-a a")  // le paso el id del contenedor padre seguido del boton
-  const iconBackdrop = document.querySelector("#icon-backdrop-hero") as HTMLElement // le paso el id de la caja que se mueve en el fondo
+  const iconBackdrop = document.querySelector("#icon-backdrop-modelS") as HTMLElement // le paso el id de la caja que se mueve en el fondo
 
   listItemA.forEach((item) => {  // a cada item de tipo a en #landing-a
     item.addEventListener("mouseenter", () => { // le agrego un event listener de cuando entra el mouse

@@ -12,7 +12,7 @@ import Logo from "./Logo.astro";
 
   <nav>
     <ul
-      class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+      class="[&>li>a]:transition-colors [&>li>a]:duration-1000 flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
     >
       <li><a href="#">Model S</a></li>
       <li><a href="#">Model 3</a></li>
@@ -25,7 +25,7 @@ import Logo from "./Logo.astro";
 
   <nav class="flex flex-grow justify-end basis-0">
     <ul
-      class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+      class="[&>li>a]:transition-colors [&>li>a]:duration-1000 flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
     >
       <li><a href="#">Soporte</a></li>
       <li><a href="#">Tienda</a></li>
@@ -36,11 +36,11 @@ import Logo from "./Logo.astro";
 
   <div 
   id="menu-backdrop"
-  class="absolute bg-black/5 backdrop-blur-lg rounded
+  class="absolute bg-black/10 backdrop-blur-xl rounded
   left-[var(--left)] top-[var(--top)]
   w-[var(--width)] h-[var(--height)]
   transition-all duration-300
-  ease-in-out opacity-0">
+  ease-in-out opacity-0 -z-10">
   </div>
 
 </header>
