@@ -10,7 +10,7 @@ npm create astro@latest -- --template basics
 
 > **How does it look?** Check this preview nephew
 
-![just-the-basics](https://github.com/valentinoarballo/TeslaClon/blob/master/public/screenshot.png)
+![just-the-basics](https://github.com/valentinoarballo/TeslaClon/blob/master/public/captura_app_1.avif)
 
 ## 🚀 Project Structure
 
