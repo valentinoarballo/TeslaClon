@@ -2,6 +2,7 @@
 import LandingHeader from "../components/LandingHeader.astro";
 import HeroSection from "../components/HeroSection.astro";
 import ModelY from "../components/ModelY.astro";
+import ModelX from "../components/ModelX.astro";
 import ModelS from "../components/ModelS.astro";
 import Experience from "../components/ExperienceTesla.astro";
 
@@ -11,17 +12,21 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Welcome to Tesla.">
   <LandingHeader />
   <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-m-0">
-    <div class="snap-center">
+    <div id="Model3" class="snap-center">
       <HeroSection />
     </div>
-    <div class="snap-center">
+    <div id="ModelY" class="snap-center">
       <ModelY title="model Y"/>
     </div>
-    <div class="snap-center">
+    <div id="ModelS" class="snap-center">
       <ModelS />
+    </div>
+    <div id="ModelX" class="snap-center">
+      <ModelX />
     </div>
     <div class="snap-center">
       <Experience />
     </div>
+    
   </main>
 </Layout>
