@@ -1,0 +1,100 @@
+---
+import { string } from 'astro/zod';
+interface Props {
+  dataHeaderColor: string;
+  textButton: string;
+  textButtonHover: string;
+  buttonBg: string;
+  img: string;
+  imgVertical: string;
+  dataNavColor: string;
+}
+
+const { dataHeaderColor, dataNavColor, textButton, textButtonHover, buttonBg, img, imgVertical} = Astro.props;
+---
+<section
+  class="landing-section h-screen w-screen text-center overflow-hidden relative bg-black"
+  data-header-color={dataNavColor}>  <!--- dataHeaderColor ---> 
+
+  <div class="z-30 relative h-full flex flex-col">
+    <header>
+      <h2 class=`${dataHeaderColor} pt-40 text-5xl font-medium`>Model S</h2> <!--- dataHeaderColor --->
+
+      <strong class=`${dataHeaderColor} text-2xl`>From $71,090*</strong> <!--- dataHeaderColor ---> 
+
+      <p class=`text-sm ${dataHeaderColor}`> <!--- dataHeaderColor ---> 
+        After Federal Tax Credit & Est. Gas Savings
+      </p>
+    </header>
+
+    <footer class="flex justify-center flex-grow pb-24">
+
+      <div id="landing-a" class="flex justify-center gap-x-4 mt-[auto] backdrop-blur-lg ">
+        <a
+          class=`w-[17rem] rounded font-medium px-6 py-2 inline-block
+          ${textButton} hover:${textButtonHover} transition-colors`
+          href="#"> <!--- textButton  textButtonHover ---> 
+          Order Now
+        </a>
+        <a
+          class=` ${textButton} hover:${textButtonHover} w-[17rem] rounded font-medium px-6 py-2 inline-block
+            transition-colors`
+          href="#"> <!--- textButton  textButtonHover ---> 
+          Read More
+        </a>
+      </div>
+
+    </footer>
+  </div>
+
+  <div class="absolute top-0 bottom-0 h-full w-full z-10">
+    <img
+      class="object-center object-cover h-full w-full"
+      src={img}
+      alt="Image of the car"
+    /> <!--- img ---> 
+  </div>
+
+  <div class="absolute top-0 bottom-0 h-full w-full z-10">
+    <img
+      class="sm:hidden display-block object-center object-cover h-full w-full"
+      src={imgVertical}
+      alt="Image of the car"
+    /> <!--- imgVertical ---> 
+  </div>
+
+
+  <div 
+  id="icon-backdrop-modelS"
+  class=`absolute ${buttonBg} backdrop-blur-lg rounded
+  left-[var(--left)] top-[var(--top)]
+  w-[var(--width)] h-[var(--height)]
+  transition-all duration-300
+  ease-in-out opacity-0 z-10`>
+  </div>
+
+</section>
+
+<script>
+  const listItemA = document.querySelectorAll("#landing-a a")  // le paso el id del contenedor padre seguido del boton
+  const iconBackdrop = document.querySelector("#icon-backdrop-modelS") as HTMLElement // le paso el id de la caja que se mueve en el fondo
+
+  listItemA.forEach((item) => {  // a cada item de tipo a en #landing-a
+    item.addEventListener("mouseenter", () => { // le agrego un event listener de cuando entra el mouse
+      const {left, top, width, height} = item.getBoundingClientRect() 
+
+      iconBackdrop.style.setProperty("--left", `${left}px`) // seteo la ubicacion de la caja a la misma ubicacion del boton
+      iconBackdrop.style.setProperty("--top", `${top}px`)
+      iconBackdrop.style.setProperty("--width", `${width}px`)
+      iconBackdrop.style.setProperty("--height", `${height}px`)
+
+      iconBackdrop.style.opacity = "1"  // y la hago visible
+      iconBackdrop.style.visibility = "visible"
+    })
+
+    item.addEventListener("mouseleave", () => {  // meto otro event listener para saber cuando se va el mouse
+      iconBackdrop.style.opacity = "0"
+      iconBackdrop.style.visibility = "hidden"
+    })
+  })
+</script>

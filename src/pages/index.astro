@@ -4,6 +4,8 @@ import HeroSection from "../components/HeroSection.astro";
 import ModelY from "../components/ModelY.astro";
 import ModelX from "../components/ModelX.astro";
 import ModelS from "../components/ModelS.astro";
+import Model from "../components/Model.astro";
+
 import Experience from "../components/ExperienceTesla.astro";
 
 import Layout from "../layouts/Layout.astro";
@@ -13,21 +15,53 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Tesla">
   <LandingHeader />
   <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-m-0">
+    
+    
+    
     <div id="Model3" class="snap-center">
       <HeroSection />
     </div>
+
+    <div id="ModelX" class="snap-center">
+      <Model 
+      dataNavColor = "white"
+      dataHeaderColor = "text-white"
+      textButton = "text-white"
+      textButtonHover = "text-black"
+      buttonBg = "bg-stone-300"
+      img = "modelS.avif"
+      imgVertical = "modelSvertical.avif"
+      />
+    </div>
+
     <div id="ModelY" class="snap-center">
+      <Model 
+      dataNavColor = "black"
+      dataHeaderColor = "text-black"
+      textButton = "text-black"
+      textButtonHover = "text-white"
+      buttonBg = "bg-stone-900"
+      img = "modelY.avif"
+      imgVertical = "modelYvertical.avif"
+      />
+    </div>
+
+    <!-- <div id="ModelY" class="snap-center">
       <ModelY title="model Y"/>
     </div>
+    
     <div id="ModelS" class="snap-center">
       <ModelS />
     </div>
+    
     <div id="ModelX" class="snap-center">
       <ModelX />
-    </div>
+    </div> -->
+    
     <div class="snap-center">
       <Experience />
     </div>
+    
     
   </main>
 </Layout>
