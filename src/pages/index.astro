@@ -1,9 +1,6 @@
 ---
 import LandingHeader from "../components/LandingHeader.astro";
 import HeroSection from "../components/HeroSection.astro";
-import ModelY from "../components/ModelY.astro";
-import ModelX from "../components/ModelX.astro";
-import ModelS from "../components/ModelS.astro";
 import Model from "../components/Model.astro";
 
 import Experience from "../components/ExperienceTesla.astro";
@@ -11,57 +8,62 @@ import Experience from "../components/ExperienceTesla.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-
 <Layout title="Tesla">
+  
   <LandingHeader />
-  <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-m-0">
-    
-    
-    
+
+  <main
+    class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-m-0"
+  >
     <div id="Model3" class="snap-center">
       <HeroSection />
     </div>
 
+    <div id="ModelS" class="snap-center">
+      <Model
+        title="Model S"
+        subtitle="From $76.640*"
+        dataNavColor="white"
+        dataHeaderColor="text-white"
+        textButton="text-white"
+        textButtonHover="text-black"
+        buttonBg="bg-stone-300"
+        img="modelS.avif"
+        imgVertical="modelSvertical.avif"
+      />
+    </div>
+
     <div id="ModelX" class="snap-center">
-      <Model 
-      dataNavColor = "white"
-      dataHeaderColor = "text-white"
-      textButton = "text-white"
-      textButtonHover = "text-black"
-      buttonBg = "bg-stone-300"
-      img = "modelS.avif"
-      imgVertical = "modelSvertical.avif"
+      <Model
+        title="Model X"
+        subtitle="From $56.640*"
+        dataNavColor="gray"
+        dataHeaderColor="text-stone-700"
+        textButton="text-stone-200"
+        textButtonHover="text-stone-900"
+        buttonBg="bg-stone-300"
+        img="modelX.avif"
+        imgVertical="modelXvertical.avif"
       />
     </div>
 
     <div id="ModelY" class="snap-center">
-      <Model 
-      dataNavColor = "black"
-      dataHeaderColor = "text-black"
-      textButton = "text-black"
-      textButtonHover = "text-white"
-      buttonBg = "bg-stone-900"
-      img = "modelY.avif"
-      imgVertical = "modelYvertical.avif"
+      <Model
+        title="Model Y"
+        subtitle="From $36.640*"
+        dataNavColor="black"
+        dataHeaderColor="text-black"
+        textButton="text-black"
+        textButtonHover="text-stone-300"
+        buttonBg="bg-stone-900"
+        img="modelY.avif"
+        imgVertical="modelYvertical.avif"
       />
     </div>
-
-    <!-- <div id="ModelY" class="snap-center">
-      <ModelY title="model Y"/>
-    </div>
-    
-    <div id="ModelS" class="snap-center">
-      <ModelS />
-    </div>
-    
-    <div id="ModelX" class="snap-center">
-      <ModelX />
-    </div> -->
     
     <div class="snap-center">
       <Experience />
     </div>
-    
-    
+
   </main>
 </Layout>
