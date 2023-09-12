@@ -1,0 +1,43 @@
+---
+interface Props {
+  textButton: string;
+  textButtonHover: string;
+  buttonBg: string;
+}
+
+const { textButton, buttonBg, textButtonHover } = Astro.props;
+---
+
+<section>
+  <div
+    id="landing-a-button"
+    class="flex justify-center gap-x-4 mt-[auto] backdrop-blur-lg"
+  >
+    <a
+      class=`w-[17rem] rounded font-medium px-6 py-2 inline-block
+      ${textButton} hover:${textButtonHover} hover:${buttonBg} transition-colors`
+      href="#"
+    >
+      
+      <slot>Order now</slot>
+    </a>
+    <a
+      class=` ${textButton} hover:${textButtonHover} hover:${buttonBg} w-[17rem] 
+      rounded font-medium px-6 py-2 inline-block transition-colors`
+      href="#"
+    >
+      
+      Read More
+    </a>
+  </div>
+
+  <div
+    id="icon-backdrop"
+    class=`absolute bg-stone-300 backdrop-blur-lg rounded
+  left-[var(--left)] top-[var(--top)]
+  w-[var(--width)] h-[var(--height)]
+  transition-all duration-300
+  ease-in-out opacity-0 z-20`
+  >
+  </div>
+</section>
